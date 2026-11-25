@@ -1,18 +1,12 @@
-[package]
-name = "virtio"
-version = "0.1.0"
-edition = "2024"
+[workspace]
+resolver = "3"
+members = ["virtqueue", "harness"]
 
-[dependencies]
-anyhow = "1.0.104"
-rand = { version = "0.10.3", features = ["chacha"] }
-thiserror = "2.0.21"
-tracing = "0.1.44"
-tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
-
+[workspace.package]
+license = "MIT"
 
 # Aggressive lints so my code is less bad 
-[lints.clippy]
+[workspace.lints.clippy]
 all = { level = "deny", priority = -1 }
 pedantic = { level = "deny", priority = -1 }
 nursery = { level = "deny", priority = -1 }
